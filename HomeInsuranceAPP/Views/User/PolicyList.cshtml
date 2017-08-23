@@ -1,0 +1,72 @@
+﻿@model Tuple<List<HomeInsuranceAPP.Models.PolicyModel>,HomeInsuranceAPP.Models.PolicyModel>
+
+@{
+    ViewBag.Title = "PolicyList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>PolicyList</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+    @*<input id="Create" type="button" value="button" onclick="CollapsDiv()"/>*@
+    <a href="#" class="btn btn-xs btn-default" onclick="CollapsDiv()"><span class="glyphicon glyphicon-plus"></span> Add new Policy</a>
+</p>
+<section>
+    <div id="createform" class="hidden">
+        @Html.Partial("PolicyCreate", Model.Item2 );
+    </div>
+</section>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Item2.PolicyNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item2.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item2.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Item2.ClientNumber)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Item1) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PolicyNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate, new { htmlAttributes = new { @Value = item.StartDate.ToString("dd-MM-yyyy") } } )
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClientNumber)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
+
+<script type="text/javascript">
+    function CollapsDiv()
+    {
+        if ($("div#createform").hasClass("hidden")) {
+            $("div#createform").removeClass("hidden");
+        } else {
+            $("div#createform").addClass("hidden");
+        }
+        //$("#createform").css("display", "none");
+        //$('#btnExpand').css("display", "block");
+    }
+</script>

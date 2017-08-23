@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8ac13e6ebc1c446ea0af462193868e82" Name="Diagram1">
+        <EntityTypeShape EntityType="HomeInsuranceModel.Claim" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HomeInsuranceModel.Coverable" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HomeInsuranceModel.Coverage" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HomeInsuranceModel.Payment" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HomeInsuranceModel.Policy" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HomeInsuranceModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="HomeInsuranceModel.FK__Claim__PolicyNum__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="HomeInsuranceModel.FK__Payment__ClaimNu__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="HomeInsuranceModel.FK__Coverable__Polic__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="HomeInsuranceModel.FK__Coverage__Policy__2C3393D0" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
